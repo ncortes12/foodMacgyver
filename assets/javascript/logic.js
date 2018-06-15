@@ -8,19 +8,36 @@ var config = {
   messagingSenderId: "198176051883"
 };
 firebase.initializeApp(config);
-var food = url = "http://api.yummly.com/v1/api/recipes?_app_id=40f36316&_app_key=2ba2f9225692cc4bb5e7d9b14d992e19&q=" + ingredients + "maxTotalTimeInSeconds=" + time + "allowedAllergy[]=" + allergy + "allowedDiet[]=" + diet;
+var food = url = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882bq=" + ingredients + "time=1-" + time + "excluded=" + excluded ;
 
 
 var ingredients;
 var time;
-var allergy;
-var diet;
+var excluded;
+
 var username;
 var database = firebase.database();
 
 var beer = url = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=10"
 var title;
 
+$("#button").on("click", function (event) {
+    event.preventDefault();
+    var ingredientsInputEl = $("#ingredientsInput");
+    var allergyInputEl = $("#allergyInput");
+    var dietInputEl = $("#dietInput");
+    var timeInputEl = $("#timeInput");
+    var ingredients = ingredientsInputEl.val().trim();
+    ingredientsInputEl.val(""); 
+    var allergy = allergyInputEl.val().trim();
+    allergyInputEl.val("");
+    var diet = dietInputEl.val().trim();
+    dietInputEl.val("");
+    var time = timeInputEl.val().trim();
+    timeInputEl.val("");
+    console.log(ingredientsInputEl, allergyInputEl, dietInputEl, timeInputEl);
+  
+    });
 
 
 database.ref(username).push({
