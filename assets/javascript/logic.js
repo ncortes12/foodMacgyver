@@ -8,13 +8,13 @@ var config = {
   messagingSenderId: "198176051883"
 };
 firebase.initializeApp(config);
-var food = url = "http://api.yummly.com/v1/api/recipes?_app_id=40f36316&_app_key=2ba2f9225692cc4bb5e7d9b14d992e19&q=" + ingredients + "maxTotalTimeInSeconds=" + time + "allowedAllergy[]=" + allergy + "allowedDiet[]=" + diet;
+var food = url = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882bq=" + ingredients + "time=1-" + time + "excluded=" + excluded ;
 
 
 var ingredients;
 var time;
-var allergy;
-var diet;
+var excluded;
+
 var username;
 var database = firebase.database();
 
@@ -27,13 +27,13 @@ $("#button").on("click", function (event) {
     var allergyInputEl = $("#allergyInput");
     var dietInputEl = $("#dietInput");
     var timeInputEl = $("#timeInput");
-    var ingredientsInputVal = ingredientsInputEl.val().trim();
+    var ingredients = ingredientsInputEl.val().trim();
     ingredientsInputEl.val(""); 
-    var allergyInputEl = allergyInputEl.val().trim();
+    var allergy = allergyInputEl.val().trim();
     allergyInputEl.val("");
-    var dietInputEl = dietInputEl.val().trim();
+    var diet = dietInputEl.val().trim();
     dietInputEl.val("");
-    var timeInputEl = timeInputEl.val().trim();
+    var time = timeInputEl.val().trim();
     timeInputEl.val("");
     console.log(ingredientsInputEl, allergyInputEl, dietInputEl, timeInputEl);
   
