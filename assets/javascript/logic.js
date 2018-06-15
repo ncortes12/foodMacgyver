@@ -21,6 +21,23 @@ var database = firebase.database();
 var beer = url = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=10"
 var title;
 
+$("#button").on("click", function (event) {
+    event.preventDefault();
+    var ingredientsInputEl = $("#ingredientsInput");
+    var allergyInputEl = $("#allergyInput");
+    var dietInputEl = $("#dietInput");
+    var timeInputEl = $("#timeInput");
+    var ingredientsInputVal = ingredientsInputEl.val().trim();
+    ingredientsInputEl.val(""); 
+    var allergyInputEl = allergyInputEl.val().trim();
+    allergyInputEl.val("");
+    var dietInputEl = dietInputEl.val().trim();
+    dietInputEl.val("");
+    var timeInputEl = timeInputEl.val().trim();
+    timeInputEl.val("");
+    console.log(ingredientsInputEl, allergyInputEl, dietInputEl, timeInputEl);
+  
+    });
 
 
 database.ref(username).push({
