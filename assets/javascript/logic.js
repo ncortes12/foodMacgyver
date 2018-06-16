@@ -51,6 +51,7 @@ $("#button").on("click", function (event) {
     title = ingredients.split(" ", 1);
 
     console.log(ingredientsInput, excludedInput, timeInput);
+    
 
     $("#results").append("<div>test</div>");
 
@@ -67,13 +68,13 @@ $.ajax({
 
 
       // Saving properties into variables
-      var recLabel = results[i].recipe.label;
-      var recImage = results[i].recipe.image;
-      var recURL = results[i].recipe.url;
-      var recTime = results[i].recipe.totalTimeInSeconds;
-      
-      
+      var recLabel = `<div><h1>${results[i].recipe.label}</h1></div>`;
+      var recImage = `<img src="${results[i].recipe.image}">`;
+      var recURL = `<div>${results[i].recipe.url}</div>`;
+      var recTime = `<div>${results[i].recipe.totalTimeInSecondsl}</div>`;
 
+      
+      $("#results").append(recLabel, recImage, recURL, recTime);
 
       console.log(recLabel, recImage, recURL, recTime);
 
