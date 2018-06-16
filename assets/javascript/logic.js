@@ -61,8 +61,9 @@ $("#button").on("click", function (event) {
     var excludedInput = excludedInput.val().trim();
     excludedInput.val("");
 
-    var timeInput = timeInput.val().trim();
-    timeInput.val("");
+
+    var timeInput = timeInput.val().trim()
+      timeInput.val("");
 
     console.log(ingredientsInput, excludedInput, timeInput);
 
