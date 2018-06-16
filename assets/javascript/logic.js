@@ -20,25 +20,7 @@ var excluded;
 var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882b&q=" + ingredients + "&time=1-" + time + "&excluded=" + excluded;
 
 
-// API GET Request
-$.ajax({
-  url: food,
-  method: "GET"
-})
 
-  // After the data from the AJAX request comes back
-  .then(function (response) {
-
-    // Saving properties into variables
-    var recLabel = response.hits.recipe.label;
-    var recImage = response.hits.recipe.image;
-    var recURL = response.hits.recipe.url;
-    var recIngredients = response.hits.recipe.ingredientsLines;
-    var recTime = response.hits.recipe.totalTimeInSeconds;
-
-    console.log(response);
-
-  });
 
 
 
@@ -70,6 +52,34 @@ $("#button").on("click", function (event) {
 
 
     });
+
+  // API GET Request
+$.ajax({
+  url: food,
+  method: "GET"
+})
+  .then(function (response) {
+    var results = response.hits;
+    for (var i = 0; i < results.length; i++) {
+      // After the data from the AJAX request comes back
+
+
+      // Saving properties into variables
+      var recLabel = results[i].recipe.label;
+      var recImage = results[i].recipe.image;
+      var recURL = results[i].recipe.url;
+      var recTime = results[i].recipe.totalTimeInSeconds;
+      
+      
+
+
+      console.log(recLabel, recImage, recURL, recTime);
+
+      console.log(response);
+
+      var beerSearch = recLabel.replace(/ /g, "_");
+      console.log(beerSearch);
+    }
 
 
 database.ref(username).push({
