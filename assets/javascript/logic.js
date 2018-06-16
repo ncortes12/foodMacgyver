@@ -49,22 +49,27 @@ var beer = url = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=
 var title;
 
 $("#button").on("click", function (event) {
-  event.preventDefault();
-  var ingredientsInputEl = $("#ingredientsInput");
-  var allergyInputEl = $("#allergyInput");
-  var dietInputEl = $("#dietInput");
-  var timeInputEl = $("#timeInput");
-  var ingredients = ingredientsInputEl.val().trim();
-  ingredientsInputEl.val("");
-  var allergy = allergyInputEl.val().trim();
-  allergyInputEl.val("");
-  var diet = dietInputEl.val().trim();
-  dietInputEl.val("");
-  var time = timeInputEl.val().trim();
-  timeInputEl.val("");
-  console.log(ingredientsInputEl, allergyInputEl, dietInputEl, timeInputEl);
+    event.preventDefault();
 
-});
+    var ingredientsInput = $("#ingredientsInput");
+    var excludedInput = $("#excludedInput");
+    var timeInput = $("#timeInput");
+
+    var ingredientsInput = ingredientsInput.val().trim();
+    ingredientsInput.val(""); 
+
+    var excludedInput = excludedInput.val().trim();
+    excludedInput.val("");
+
+    var timeInput = timeInput.val().trim();
+    timeInput.val("");
+
+    console.log(ingredientsInput, excludedInput, timeInput);
+
+    $("#results").append("<div>test</div>");
+
+
+    });
 
 
 database.ref(username).push({
