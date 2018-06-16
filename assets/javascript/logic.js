@@ -26,9 +26,9 @@ var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b55
 
 // Authentication
 var username;
-
-var beer = url = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=10"
 var title;
+var beer = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=2"
+
 
 $("#button").on("click", function (event) {
     event.preventDefault();
@@ -37,23 +37,25 @@ $("#button").on("click", function (event) {
     var excludedInput = $("#excludedInput");
     var timeInput = $("#timeInput");
 
-    var ingredientsInput = ingredientsInput.val().trim();
+    var userIngredients = ingredientsInput.val().trim();
+    ingerdients = userIngredients.replace(/ /g, "-");
     ingredientsInput.val(""); 
 
-    var excludedInput = excludedInput.val().trim();
+    var userExcluded = excludedInput.val().trim();
+    excluded = userExcluded.replace(/ /g, "-");
     excludedInput.val("");
 
-    var timeInput = timeInput.val().trim();
+    time = timeInput.val().trim();
     timeInput.val("");
+
+    title = ingredients.split(" ", 1);
 
     console.log(ingredientsInput, excludedInput, timeInput);
 
     $("#results").append("<div>test</div>");
 
 
-    });
-
-  // API GET Request
+  //API GET Request
 $.ajax({
   url: food,
   method: "GET"
@@ -77,9 +79,30 @@ $.ajax({
 
       console.log(response);
 
-      var beerSearch = recLabel.replace(/ /g, "_");
-      console.log(beerSearch);
     }
+  })
+console.log(beer);
+  $.ajax({
+    url: beer,
+    method: "GET"
+  }).then(function (beerResponse){
+    
+      var beerResult = beerResponse
+    for (var j=0; j < beerResult.length; j++){
+      
+      var beerName = beerResult[j].name;
+      var tagline = beerResult[j].tagline;
+      var description = beerResult[j].description;
+      var beerImg = beerResult[j].image_url;
+      
+      console.log(beerName, tagline, description, beerImg );
+     
+
+    }})
+
+  });
+
+
 
 
 database.ref(username).push({
@@ -92,10 +115,8 @@ database.ref(username).on("child_added", function (snapshot) {
   var snap = snapshot.val();
 
 
-})
+});
 
-var replaceSpace = "chicken salad";
+  
 
-var result = replaceSpace.replace(" ", "-");
-
-console.log(result);
+  
