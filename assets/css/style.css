@@ -1,0 +1,24 @@
+#first{
+    background-image: url("banner.jpg");
+    background-color: brown;
+     background-size: cover;
+    background-repeat:no-repeat;
+    padding: 25%; 
+
+    border-radius: 10%;
+
+}
+
+
+
+#divide{
+    background-image: url("culnary.png");
+}
+  
+body{
+    background-color: gainsboro;
+}
+
+.home{
+    background-color:gainsboro;
+}

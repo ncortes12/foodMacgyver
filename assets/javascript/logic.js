@@ -17,7 +17,6 @@ var time;
 var excluded;
 
 // Adding the API into a variable
-var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882b&q=" + ingredients + "&time=1-" + time + "&excluded=" + excluded;
 
 
 
@@ -27,10 +26,10 @@ var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b55
 // Authentication
 var username;
 var title;
-var beer = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=2"
 
 
-$("#button").on("click", function (event) {
+
+$("#search").on("click", function (event) {
     event.preventDefault();
 
     var ingredientsInput = $("#ingredientsInput");
@@ -38,7 +37,7 @@ $("#button").on("click", function (event) {
     var timeInput = $("#timeInput");
 
     var userIngredients = ingredientsInput.val().trim();
-    ingerdients = userIngredients.replace(/ /g, "-");
+    ingredients = userIngredients.replace(/ /g, "-");
     ingredientsInput.val(""); 
 
     var userExcluded = excludedInput.val().trim();
@@ -48,13 +47,14 @@ $("#button").on("click", function (event) {
     time = timeInput.val().trim();
     timeInput.val("");
 
-    title = ingredients.split(" ", 1);
+    title = userIngredients.split(" ", 1);
 
     console.log(ingredientsInput, excludedInput, timeInput);
     
-
-    $("#results").append("<div>test</div>");
-
+  console.log(ingredients, excluded , time );
+   
+  var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882b&q=" + ingredients + "&time=1-" + time + "&excluded=" + excluded;
+  var beer = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=2"
 
   //API GET Request
 $.ajax({
@@ -76,47 +76,48 @@ $.ajax({
       
       $("#results").append(recLabel, recImage, recURL, recTime);
 
-      console.log(recLabel, recImage, recURL, recTime);
+      // console.log(recLabel, recImage, recURL, recTime);
 
-      console.log(response);
+      // console.log(response);
 
     }
+    $.ajax({
+      url: beer,
+      method: "GET"
+    }).then(function (beerResponse){
+        console.log(beer);
+        var beerResult = beerResponse
+      for (var j=0; j < beerResult.length; j++){
+        
+        var beerName = beerResult[j].name;
+        var tagline = beerResult[j].tagline;
+        var description = beerResult[j].description;
+        var beerImg = beerResult[j].image_url;
+        
+        console.log(beerName, tagline, description, beerImg );
+       
+  
+      }})
   })
-console.log(beer);
-  $.ajax({
-    url: beer,
-    method: "GET"
-  }).then(function (beerResponse){
-    
-      var beerResult = beerResponse
-    for (var j=0; j < beerResult.length; j++){
-      
-      var beerName = beerResult[j].name;
-      var tagline = beerResult[j].tagline;
-      var description = beerResult[j].description;
-      var beerImg = beerResult[j].image_url;
-      
-      console.log(beerName, tagline, description, beerImg );
-     
 
-    }})
+ 
 
   });
 
 
 
 
-database.ref(username).push({
+// database.ref(username).push({
 
 
 
-})
+// })
 
-database.ref(username).on("child_added", function (snapshot) {
-  var snap = snapshot.val();
+// database.ref(username).on("child_added", function (snapshot) {
+//   var snap = snapshot.val();
 
 
-});
+// });
 
   
 

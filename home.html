@@ -59,7 +59,7 @@
 
                         <form>
                             <div class="input-field yellow lighten-5">
-                                <input id="wanted" type="text" class="validate">
+                                <input id="ingredientsInput" type="text" class="validate">
                                 <label for="ingredients">I.e.brocolli tomato</label>
                                 <span class="helper-text" data-error="wrong" data-success="right"></span>
                             </div>
@@ -76,7 +76,7 @@
 
                         <form>
                             <div class="input-field yellow lighten-5 ">
-                                <input id="unwanted" type="text" class="validate">
+                                <input id="excludedInput" type="text" class="validate">
                                 <label for="unwanted">I.e.allergies</label>
                                 <span class="helper-text" data-error="wrong" data-success="right">optional</span>
                             </div>
@@ -93,7 +93,7 @@
 
                         <form>
                             <div class="input-field yellow lighten-5">
-                                <input id="preptime" type="text" class="validate">
+                                <input id="timeInput" type="text" class="validate">
                                 <label for="time">I.e. 15</label>
                                 <span class="helper-text" data-error="wrong" data-success="right">optional</span>
                             </div>
@@ -108,7 +108,7 @@
                         <div class="card-content white-text">
                             <span class="card-title"></span>
 
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Search Recipes!
+                            <button class="btn waves-effect waves-light" id="search" type="submit" name="action">Search Recipes!
                                 <i class="material-icons right"></i>
                             </button>
                         </div>
