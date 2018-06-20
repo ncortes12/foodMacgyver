@@ -19,13 +19,10 @@ var count = 0;
 // Adding the API into a variable
 
 
-
-
-
-
 // Authentication
-var username = "nicole";
-var title;
+var username = new URLSearchParams(window.location.search);
+
+console.log(username.get('username'));
 
 
 
