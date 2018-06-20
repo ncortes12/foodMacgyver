@@ -21,8 +21,9 @@ var count = 0;
 
 // Authentication
 var username = new URLSearchParams(window.location.search);
+//
 
-console.log(username.get('username'));
+//console.log(username.get('username'));
 
 
 
@@ -134,16 +135,17 @@ $.ajax({
   $(document).on("click", ".favorite", function(){
     var favCount = $(this).attr("recipe");
     var save = ( $("#"+favCount).html())
-    database.ref(username).push({
+    database.ref(username.get('username')).push({
       savedRec: save,
     
     
   })
 
   })
-database.ref(username).on("child_added", function (snapshot) {
+database.ref(username.get('username')).on("child_added", function (snapshot) {
   var snap = snapshot.val();
   console.log(snap.savedRec);
+  $("#favRec").append(snap.savedRec);
   
 
 
