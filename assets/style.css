@@ -1,0 +1,39 @@
+#first{
+        background-image: url("banner.jpg");
+        background-color: brown;
+         background-size: cover;
+        background-repeat:no-repeat;
+        padding: 25%; 
+    
+        border-radius: 10%;
+    
+
+    }
+    
+    #gorecipe {
+        background-color: teal;
+        color: white;
+        box-shadow: 5px;
+    }
+    
+    #gorecipe:hover{
+        background-color: grey;
+    }
+
+    #reccard{
+        text-align: center;
+        border: groove teal;
+    }
+    
+    #divide{
+        background-image: url("culnary.png");
+    }
+      
+    body{
+        background-color: gainsboro;
+    }
+    
+    .home{
+        background-color:gainsboro;
+    } 
+   
