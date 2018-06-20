@@ -20,7 +20,7 @@
         background-color: grey;
     }
 
-    reccard{
+    #reccard{
         text-align: center;
         border: groove teal;
     }
@@ -36,7 +36,4 @@
     .home{
         background-color:gainsboro;
     } 
-    
-    .results{
-
-    }
+   

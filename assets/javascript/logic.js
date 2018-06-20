@@ -75,6 +75,7 @@ $.ajax({
       <form  action="${results[i].recipe.url}" target="_blank">
       <input id = "gorecipe" type="submit" value="Go To Recipe"/>
   </form></div>`;
+
       var recTime = `<div>${results[i].recipe.totalTimeInSecondsl}</div>`;
 
       var style = '<div id="reccard" class = "card amber darken-2">'+recLabel+ recImage+recURL+recTime+'</div>';
@@ -117,7 +118,9 @@ $.ajax({
       }})
   })
 
- 
+  var urlParams = new URLSearchParams(window.location.search);
+
+  console.log(urlParams.get('username'));
 
   });
 
