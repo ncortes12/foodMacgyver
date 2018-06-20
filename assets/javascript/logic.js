@@ -123,7 +123,7 @@ $.ajax({
         console.log(beerName, tagline, description, beerImg );
        
       
-        var alcohol='<div id = "alcohol" class = "card white">'+beerName+tagline+description+description+beerImg+'</div>'
+        var alcohol='<div id = "alcohol" class = "card white">'+'<img src= "beerImg">'+beerName+tagline+description+'</div>';
         $("#beer").append(alcohol);
       }})
   })
