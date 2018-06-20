@@ -25,7 +25,7 @@
         <br>
         <div class="row">
             <div id="first">
-                <img src = "assets\Banner.jpg"> 
+                <!-- <img src = "assets\Banner.jpg">  -->
             </div>
         </div>
 
@@ -33,15 +33,15 @@
 
         <div class="row">
 
-            <form class="col s9">
-                <div class="input-field col s7">
-                    <input id="username" type="text" class="validate">
+            <form action = "home.html" method="get" class="col s9">
+                <div id= "username" class="input-field col s7">
+                    <input id="username" type="text" name="username" class="validate">
                     <label for="username"></label>
                     <span class="helper-text" data-error="wrong" data-success="right">Username</span>
                 </div>
 
                 <div class="col s4">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">GO!
+                    <button id="submituser" class="btn waves-effect waves-light" type="submit" name="action">GO!
                     </button>
 
             </form>
