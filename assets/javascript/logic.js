@@ -15,7 +15,7 @@ var database = firebase.database();
 var ingredients;
 var time;
 var excluded;
-
+var count = 0;
 // Adding the API into a variable
 
 
@@ -24,7 +24,7 @@ var excluded;
 
 
 // Authentication
-var username;
+var username = "nicole";
 var title;
 
 
@@ -68,17 +68,35 @@ $.ajax({
 
 
       // Saving properties into variables
+      
+      
+      var recDiv =$("<div>");
+      recDiv.attr("id", count);
+      
+      
+     
+
+
       var recLabel = `<div><h1>${results[i].recipe.label}</h1></div>`;
       var recImage = `<img src="${results[i].recipe.image}">`;
       var recURL = `<div>${results[i].recipe.url}</div>`;
-      var recTime = `<div>${results[i].recipe.totalTimeInSecondsl}</div>`;
-
+      var recTime = `<div><p>Cook Time in Minutes</p>${results[i].recipe.totalTime}</div>`;
+      var favBtn = $("<button>").text("Favorite");
+      favBtn.attr("recipe", count);
+      favBtn.addClass("favorite");
+      recDiv.append(recLabel, recImage, recURL, recTime, favBtn);
       
-      $("#results").append(recLabel, recImage, recURL, recTime);
+     
+      $("#results").append(recDiv);
+      count++;
 
       // console.log(recLabel, recImage, recURL, recTime);
 
       // console.log(response);
+     
+
+
+      
 
     }
     $.ajax({
@@ -103,21 +121,32 @@ $.ajax({
  
 
   });
+  $(document).on("click", ".favorite", function(){
+    var favCount = $(this).attr("recipe");
+    var save = ( $("#"+favCount).html())
+    database.ref(username).push({
+      savedRec: save,
+    
+    
+  })
+
+  })
 
 
 
 
-// database.ref(username).push({
 
 
 
-// })
-
-// database.ref(username).on("child_added", function (snapshot) {
-//   var snap = snapshot.val();
 
 
-// });
+database.ref(username).on("child_added", function (snapshot) {
+  var snap = snapshot.val();
+  console.log(snap.savedRec);
+  
+
+
+});
 
   
 
