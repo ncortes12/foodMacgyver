@@ -80,9 +80,15 @@ $.ajax({
 
       var recLabel = `<div><h1>${results[i].recipe.label}</h1></div>`;
       var recImage = `<img src="${results[i].recipe.image}">`;
-      var recURL = `<div>${results[i].recipe.url}</div>`;
+      //var recURL = `<div>${results[i].recipe.url}</div>`;
       var recTime = `<div><p>Cook Time in Minutes</p>${results[i].recipe.totalTime}</div>`;
       var favBtn = $("<button>").text("Favorite");
+      var recURL = `<div>
+      <form action="${results[i].recipe.url}" target="_blank">
+      <input id = "gorecipe" type="submit" value="Go To Recipe"/>
+  </form></div>`;
+
+
       favBtn.attr("recipe", count);
       favBtn.addClass("favorite");
       recDiv.append(recLabel, recImage, recURL, recTime, favBtn);
@@ -116,7 +122,8 @@ $.ajax({
         console.log(beerName, tagline, description, beerImg );
        
       
-  
+        var alcohol='<div id = "alcohol" class = "card amber darken-2">'+beerName+tagline+description+description+beerImg+'</div>'
+        $("#beer").append(alcohol);
       }})
   })
 
