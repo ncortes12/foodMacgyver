@@ -63,6 +63,7 @@ $.ajax({
 })
   .then(function (response) {
     var results = response.hits;
+    $("#results").empty();
     for (var i = 0; i < results.length; i++) {
       // After the data from the AJAX request comes back
 
@@ -114,6 +115,7 @@ $.ajax({
         
         console.log(beerName, tagline, description, beerImg );
        
+      
   
       }})
   })
@@ -131,15 +133,6 @@ $.ajax({
   })
 
   })
-
-
-
-
-
-
-
-
-
 database.ref(username).on("child_added", function (snapshot) {
   var snap = snapshot.val();
   console.log(snap.savedRec);
@@ -147,6 +140,11 @@ database.ref(username).on("child_added", function (snapshot) {
 
 
 });
+
+
+
+
+
 
   
 
