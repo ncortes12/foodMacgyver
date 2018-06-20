@@ -64,6 +64,7 @@ $.ajax({
 })
   .then(function (response) {
     var results = response.hits;
+    $("#results").empty();
     for (var i = 0; i < results.length; i++) {
       // After the data from the AJAX request comes back
 
@@ -72,7 +73,7 @@ $.ajax({
       var recLabel = `<div><h1>${results[i].recipe.label}</h1></div>`;
       var recImage = `<img src="${results[i].recipe.image}">`;
       var recURL = `<div>
-      <form  action="${results[i].recipe.url}" target="_blank">
+      <form action="${results[i].recipe.url}" target="_blank">
       <input id = "gorecipe" type="submit" value="Go To Recipe"/>
   </form></div>`;
 
@@ -110,7 +111,7 @@ $.ajax({
         console.log(beerName, tagline, description, beerImg );
        
 
-        var alcohol='<div class = "card amber darken-2">'+beerName+tagline+description+description+beerImg+'</div>'
+        var alcohol='<div id = "alcohol" class = "card amber darken-2">'+beerName+tagline+description+description+beerImg+'</div>'
        
         
         $("#beer").append(alcohol);

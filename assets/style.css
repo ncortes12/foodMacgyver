@@ -23,6 +23,15 @@
     #reccard{
         text-align: center;
         border: groove teal;
+        color:black;
+        text-shadow:white 2px 2px;
+    }
+
+    #alcohol{
+        text-align: center;
+        border: groove teal;
+        color:black;
+        text-shadow:white 1px 1px;
     }
     
     #divide{
