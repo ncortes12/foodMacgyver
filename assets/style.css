@@ -8,14 +8,26 @@
 
 
 }
-/* 
-#gorecipe {
-    font-family:'Lobster Two', cursive;
+
+.favorite{
+    font-family:'Permanent Marker', cursive;
     background-color:darkblue;
     color:palevioletred;
     border-radius: 5px;
     box-shadow: 5px;
-} */
+}
+
+#gorecipe {
+    font-family:'Permanent Marker', cursive;
+    background-color:darkblue;
+    color:palevioletred;
+    border-radius: 5px;
+    box-shadow: 5px;
+} 
+
+#gorecipe:hover{
+    background-color: grey;
+}
 
 #ingredientz{
     font-family: 'Permanent Marker', cursive;
@@ -53,9 +65,7 @@
     color:palevioletred;
 }
 
-#gorecipe:hover{
-    background-color: grey;
-}
+
 
 .reccard{
     text-align: center;
