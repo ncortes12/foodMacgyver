@@ -1,6 +1,5 @@
 #first{
     background-image: url("banner.jpg");
-    background-color: brown;
      background-size: cover;
     background-repeat:no-repeat;
     padding: 25%; 
@@ -9,29 +8,72 @@
 
 
 }
-
+/* 
 #gorecipe {
-    background-color: teal;
-    color: white;
+    font-family:'Lobster Two', cursive;
+    background-color:darkblue;
+    color:palevioletred;
+    border-radius: 5px;
     box-shadow: 5px;
+} */
+
+#ingredientz{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#allergy{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#time{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#optional{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#optional2{
+    font-family: 'Permanent Marker', cursive;
+}
+
+#usernamelabel{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.card{
+    font-family: 'Lobster Two',cursive;
+    border-radius:10px;
+    border:solid lightgray 1px;
+}
+
+#search{
+    border-radius:6px;
+    font-family: 'Permanent Marker', cursive;
+    color:palevioletred;
 }
 
 #gorecipe:hover{
     background-color: grey;
 }
 
-#reccard{
+.reccard{
     text-align: center;
-    border: groove teal;
+    font-family: 'Lobster Two', cursive;
+    border: groove palevioletred 3px;
+    border-radius:10px;
     color:black;
-    text-shadow:white 2px 2px;
+    text-shadow:rgba(255, 255, 255, 0.397) 1px 1px;
+    padding: 0px, 0px, 20px,0px;
 }
 
 #alcohol{
     text-align: center;
-    border: groove teal;
+    font-family: 'Lobster Two', cursive;
+    border: groove palevioletred 3px;
+    border-radius:10px;
     color:black;
-    text-shadow:white 1px 1px;
+    
 }
 
 #divide{
