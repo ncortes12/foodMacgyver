@@ -1,3 +1,12 @@
+body{
+    background:url(https://static1.squarespace.com/static/598288a52994ca751a237d5d/t/599f7fd79f7456b8abb06b77/1503625408599/Menu+Background);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+
+
 #first{
     background-image: url("banner.jpg");
      background-size: cover;
@@ -70,7 +79,7 @@
 .reccard{
     text-align: center;
     font-family: 'Lobster Two', cursive;
-    border: groove palevioletred 3px;
+    border: solid palevioletred 1px;
     border-radius:10px;
     color:black;
     text-shadow:rgba(255, 255, 255, 0.397) 1px 1px;
@@ -80,7 +89,7 @@
 #alcohol{
     text-align: center;
     font-family: 'Lobster Two', cursive;
-    border: groove palevioletred 3px;
+    border: solid palevioletred 1px;
     border-radius:10px;
     color:black;
     
