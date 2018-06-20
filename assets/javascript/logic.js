@@ -73,6 +73,10 @@ $.ajax({
       
       var recDiv =$("<div>");
       recDiv.attr("id", count);
+
+      recDiv.addClass("card white reccard");
+
+      // recDiv.addClass("reccard");
       
       
      
@@ -122,7 +126,7 @@ $.ajax({
         console.log(beerName, tagline, description, beerImg );
        
       
-        var alcohol='<div id = "alcohol" class = "card amber darken-2">'+beerName+tagline+description+description+beerImg+'</div>'
+        var alcohol='<div id = "alcohol" class = "card white">'+beerName+tagline+description+description+beerImg+'</div>'
         $("#beer").append(alcohol);
       }})
   })

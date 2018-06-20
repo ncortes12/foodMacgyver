@@ -12,6 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lobster+Two|Pacifico|Song+Myung|Permanent+Marker" rel="stylesheet">
 </head>
 
 
@@ -34,14 +35,14 @@
 
 
             <div class="col s3">
-                <div class="card amber darken-2">
-                    <div class="card-content white-text">
+                <div class="card white">
+                    <div class="card-content black-text">
                         <span class="card-title">Your Ingredients</span>
 
                         <form>
-                            <div class="input-field yellow lighten-5">
+                            <div class="input-field pink lighten-5">
                                 <input id="ingredientsInput" type="text" class="validate">
-                                <label for="ingredients">I.e.brocolli tomato</label>
+                                <label id="ingredientz" for="ingredients">I.e.brocolli tomato</label>
                                 <span class="helper-text" data-error="wrong" data-success="right"></span>
                             </div>
 
@@ -55,15 +56,15 @@
 
 
             <div class="col s3">
-                <div class="card amber darken-2">
-                    <div class="card-content white-text">
+                <div class="card white">
+                <div class="card-content black-text">
                         <span class="card-title">Unwanted Ingredients</span>
 
                         <form>
-                            <div class="input-field yellow lighten-5 ">
+                            <div class="input-field  pink lighten-5">
                                 <input id="excludedInput" type="text" class="validate">
-                                <label for="unwanted">I.e.allergies</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">optional</span>
+                                <label id="allergy" for="unwanted">I.e.allergies</label>
+                                <span id="optional" class="helper-text" data-error="wrong" data-success="right">optional</span>
                             </div>
                         </form>
                     </div>
@@ -72,15 +73,15 @@
             </div>
 
             <div class="col s2">
-                <div class="card amber darken-2">
-                    <div class="card-content white-text">
+                <div class="card white">
+                    <div class="card-content black-text">
                         <span class="card-title">Prepare Time(min)</span>
 
                         <form>
-                            <div class="input-field yellow lighten-5">
+                            <div class="input-field  pink lighten-5">
                                 <input id="timeInput" type="text" class="validate">
-                                <label for="time">I.e. 15</label>
-                                <span class="helper-text" data-error="wrong" data-success="right">optional</span>
+                                <label id="time" for="time">I.e. 15</label>
+                                <span id="optional2" class="helper-text" data-error="wrong" data-success="right">optional</span>
                             </div>
                         </form>
                     </div>
@@ -88,18 +89,18 @@
             </div>
 
             <div class="col s2">
-                <div class="card amber darken-2">
-                    <div class="card-content white-text">
-                        <span class="card-title"></span>
+                 <div class="card white">
+                     <div class="card-content black-text">
+                        <span class="card-title"></span> 
 
-                        <button class="btn waves-effect waves-light" id="search" type="submit" name="action">Search Recipes!
+                        <button class="btn waves-effect waves-light indigo darken-4" id="search" type="submit" name="action">Search Recipes!
                             <i class="material-icons right"></i>
                         </button>
                     </div>
 
                 </div>
-                <div class="card amber darken-2 width=100">
-                        <div class="card-content white-text">
+                <div class="card white width=100">
+                        <div class="card-content black-text">
                 <p> A beer will also be paired with your search!</p>    
                         </div>
     
