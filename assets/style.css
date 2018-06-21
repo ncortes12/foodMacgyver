@@ -6,7 +6,7 @@ body{
 }
 
 #first{
-    background-image: url(https://github.com/ncortes12/foodMacgyver/blob/master/assets/Banner.jpg);
+    background-image: url(https://github.com/ncortes12/foodMacgyver/blob/master/assets/Banner.jpg?raw=true);
     background-size: cover;
     background-repeat:no-repeat;
     padding: 25%; 
