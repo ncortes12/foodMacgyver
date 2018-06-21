@@ -26,8 +26,7 @@ var username = new URLSearchParams(window.location.search);
 //console.log(username.get('username'));
 
 
-
-$("#search").on("click", function (event) {
+$("#search").on("click", function (event){ 
     event.preventDefault();
 
     var ingredientsInput = $("#ingredientsInput");
@@ -49,7 +48,7 @@ $("#search").on("click", function (event) {
 
     console.log(ingredientsInput, excludedInput, timeInput);
     
-  console.log(ingredients, excluded , time );
+    console.log(ingredients, excluded , time );
    
   var food = "https://api.edamam.com/search?app_id=bffc1c60&app_key=f34dee8c2c3b557affccc392f878882b&q=" + ingredients + "&time=1-" + time + "&excluded=" + excluded;
   var beer = "https://api.punkapi.com/v2/beers/?food=" + title + "&per_page=2"
@@ -66,29 +65,24 @@ $.ajax({
       // After the data from the AJAX request comes back
 
 
-      // Saving properties into variables
-      
+      // Saving properties into variables   
       
       var recDiv =$("<div>");
       recDiv.attr("id", count);
 
       recDiv.addClass("card white reccard");
 
-      // recDiv.addClass("reccard");
-      
-      
-     
-
-
       var recLabel = `<div><h1>${results[i].recipe.label}</h1></div>`;
-      var recImage = `<img src="${results[i].recipe.image}">`;
-      //var recURL = `<div>${results[i].recipe.url}</div>`;
-      var recTime = `<div><p>Cook Time in Minutes</p>${results[i].recipe.totalTime}</div>`;
-      var favBtn = $("<button>").text("Favorite");
+      var recImage = `<img src="${results[i].recipe.image}"/>`;
       var recURL = `<div>
       <form action="${results[i].recipe.url}" target="_blank">
       <input id = "gorecipe" type="submit" value="Go To Recipe"/>
-  </form></div>`;
+      </form></div>`;
+      // var recURL = `<div>
+      //     <a href="${results[i].recipe.url}" target="_blank">Source Page</div>`;
+      var recTime = `<div><p>Cook Time in Minutes</p>${results[i].recipe.totalTime}</div>`;
+      var favBtn = $("<button>").text("Favorite");
+
 
 
       favBtn.attr("recipe", count);
@@ -101,10 +95,7 @@ $.ajax({
 
       // console.log(recLabel, recImage, recURL, recTime);
 
-      // console.log(response);
-     
-
-
+      // console.log(response); 
       
 
     }
@@ -116,22 +107,27 @@ $.ajax({
         var beerResult = beerResponse
       for (var j=0; j < beerResult.length; j++){
         
-        var beerName = beerResult[j].name;
-        var tagline = beerResult[j].tagline;
-        var description = beerResult[j].description;
-        var beerImg = beerResult[j].image_url;
+        var imgDiv =$("<div>");
+        imgDiv.attr("id", "alcohol");
+        imgDiv.addClass("card white");
         
-        console.log(beerName, tagline, description, beerImg );
+        var beerName = `<div><h1>${beerResult[j].name}</h1></div>`;
+        var tagline = `<div>${beerResult[j].tagline}</div>`;
+        var description = `<div>${beerResult[j].description}</div>`;
+        var beerImg = `<img src="${beerResult[j].image_url}"/>`;
+        
+        console.log(beerName, tagline, description);
        
-      
-        var alcohol='<div id = "alcohol" class = "card white">'+'<img src= "beerImg">'+beerName+tagline+description+'</div>';
-        $("#beer").append(alcohol);
+        imgDiv.append(beerName, tagline, description, beerImg)
+        $("#beer").append(imgDiv);
       }})
   })
 
- 
+
 
   });
+
+
   $(document).on("click", ".favorite", function(){
     var favCount = $(this).attr("recipe");
     var save = ( $("#"+favCount).html())
