@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 
 <head>
@@ -15,25 +14,14 @@
     <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Lobster+Two|Pacifico|Song+Myung|Permanent+Marker" rel="stylesheet">
 </head>
 
-
 <body>
 
     <div class="container">
         <br>
 
-        <div id="first">
-        </div>
-
-
-
-
-
+        <div id="first"></div>
 
         <div class="row">
-
-
-
-
             <div class="col s3">
                 <div class="card white">
                     <div class="card-content black-text">
@@ -43,29 +31,23 @@
                             <div class="input-field pink lighten-5">
                                 <input id="ingredientsInput" type="text" class="validate">
                                 <label id="ingredientz" for="ingredients">I.e.brocolli tomato</label>
-                                <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                <!-- <span class="helper-text" data-error="wrong" data-success="right"></span> -->
                             </div>
-
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!--  -->
-
-
-
             <div class="col s3">
                 <div class="card white">
-                <div class="card-content black-text">
+                    <div class="card-content black-text">
                         <span class="card-title">Unwanted Ingredients</span>
-
                         <form>
                             <div class="input-field  pink lighten-5">
                                 <input id="excludedInput" type="text" class="validate">
-                                <label id="allergy" for="unwanted">I.e.allergies</label>
-                                <span id="optional" class="helper-text" data-error="wrong" data-success="right">optional</span>
+                                <label id="allergy" for="unwanted">I.e.allergies</label>       <!-- <span id="optional" class="helper-text" data-error="wrong" data-success="right">optional</span> -->
                             </div>
+                            Optional
                         </form>
                     </div>
                 </div>
@@ -75,23 +57,24 @@
             <div class="col s2">
                 <div class="card white">
                     <div class="card-content black-text">
-                        <span class="card-title">Prepare Time(min)</span>
+                        <span class="card-title">Prepare Time (min)</span>
 
                         <form>
                             <div class="input-field  pink lighten-5">
                                 <input id="timeInput" type="text" class="validate">
                                 <label id="time" for="time">I.e. 15</label>
-                                <span id="optional2" class="helper-text" data-error="wrong" data-success="right">optional</span>
+                                <!-- <span id="optional2" class="helper-text" data-error="wrong" data-success="right">optional</span> -->
                             </div>
+                            Optional
                         </form>
                     </div>
                 </div>
             </div>
 
             <div class="col s2">
-                 <div class="card white">
-                     <div class="card-content black-text">
-                        <span class="card-title"></span> 
+                <div class="card white">
+                    <div class="card-content black-text">
+                        <span class="card-title"></span>
 
                         <button class="btn waves-effect waves-light indigo darken-4" id="search" type="submit" name="action">Search Recipes!
                             <i class="material-icons right"></i>
@@ -100,33 +83,33 @@
 
                 </div>
                 <div class="card white width=100">
-                        <div class="card-content black-text">
-                <p> A beer will also be paired with your search!</p>    
-                        </div>
-    
+                    <div class="card-content black-text">
+                        <p> A beer will also be paired with your search!</p>
                     </div>
+
+                </div>
             </div>
 
-</div>
+        </div>
 
         <div class="row">
 
-                <div id = "fav" class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                          <img class="activator" src="assets/culinary.png">
-                        </div>
-                        <div class="card-content">
-                          <span class="card-title activator grey-text text-darken-4">Favorites<i class="material-icons right">open_in_browser</i></span>
-                        </div>
-                        <div class="card-reveal">
-                          <span class="card-title grey-text text-darken-4">Favorites<i class="material-icons right">close</i></span>
-                          <div id="favRec"></div>>
-                        </div>
-                      </div>
-           
-
-
-
+            <div id="fav" class="card">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="assets/culinary.png">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Favorites
+                        <i class="material-icons right">open_in_browser</i>
+                    </span>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Favorites
+                        <i class="material-icons right">close</i>
+                    </span>
+                    <div id="favRec"></div>>
+                </div>
+            </div>
 
             <!-- <div class="col s3">
                 <div class="card amber darken-2">
@@ -136,36 +119,31 @@
                             <i class="material-icons right"></i>
                         </button>
                     </div>
-                </div>
-
-
-
-
-
-                 -->
+                </div>-->
 
             <br>
-    </div>      
+        </div>
 
-            <div class="row">
+        <div class="row">
+        
 
-                <div class="col s5">
-                    <div id="beer">
+            <div class="col s5">
+                <div id="beer">
 
-                    </div>
                 </div>
-
-                <div class="col s5">
-                    <div id="results">
-
-                    </div>
-                </div>
-
-
             </div>
 
+            <div class="col s5">
+                <div id="results">
+
+                </div>
+            </div>
+
+
         </div>
-        <!-- <div class="col s12">
+
+    </div>
+    <!-- <div class="col s12">
                                     <div class="card amber darken-2">
                                         <div class="card-content white-text">
                                             <span class="card-title"></span>
@@ -176,22 +154,8 @@
                             </div>
                 </div> -->
 
-
-
-
-
-
-
-
-        <br>
-        <br>
-
-
-
-
-
-
-
+    <br>
+    <br>
 
     </div>
     </div>
